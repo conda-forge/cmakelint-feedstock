@@ -1,5 +1,5 @@
 {% set name = "cmakelint" %}
-{% set version = "1.4.1" %}
+{% set version = "1.4.2" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 58aebd449baac4444fca2346f172821e7684f99312694128087617f50db0c4be
+  sha256: 87079ff6bb74bc961522aef64dedf2aeb90a8152718eabe105f1f261451b7329
 
 build:
   noarch: python
@@ -18,14 +18,18 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
 
 test:
+  requires:
+    - pytest-runner
   imports:
     - cmakelint
+  commands:
+    - cmakelint --version
 
 about:
   home: https://github.com/cmake-lint/cmake-lint
@@ -38,3 +42,4 @@ about:
 extra:
   recipe-maintainers:
     - asafkahlon
+    - timkpaine
