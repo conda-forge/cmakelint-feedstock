@@ -1,5 +1,5 @@
 {% set name = "cmakelint" %}
-{% set version = "1.4.2" %}
+{% set version = "1.4.3" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 87079ff6bb74bc961522aef64dedf2aeb90a8152718eabe105f1f261451b7329
+  sha256: 98a1e485318b41eeaf4dee3469ca3039d4745985353ecea208d6dd2c1204c71d
 
 build:
   noarch: python
